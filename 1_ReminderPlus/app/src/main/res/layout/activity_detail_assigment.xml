@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_item_photoo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:src="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/titleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_item_photoo"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/dateAssigment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDetail"
+        tools:text="10:00 AM" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateAssigment">
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp">
+            <TextView
+                style="@style/TextSpec.Field"
+                android:text="Course" />
+
+            <TextView
+                android:id="@+id/course"
+                style="@style/TextSpec.Value"
+                tools:text="Pemograman Perangkat Bergerak (Mobile)" />
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp">
+            <TextView
+                style="@style/TextSpec.Field"
+                android:text="Description" />
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/TextSpec.Value"
+                tools:text="Deskripsi" />
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp">
+            <TextView
+                style="@style/TextSpec.Field"
+                android:text="Time Remaining" />
+
+            <TextView
+                android:id="@+id/timeRemaining"
+                style="@style/TextSpec.Value"
+                tools:text="7 hours remaining" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp">
+            <TextView
+                style="@style/TextSpec.Field"
+                android:text="Status" />
+
+            <TextView
+                android:id="@+id/statusAssigment"
+                style="@style/TextSpec.Value"
+                tools:text="Selesai" />
+        </TableRow>
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
