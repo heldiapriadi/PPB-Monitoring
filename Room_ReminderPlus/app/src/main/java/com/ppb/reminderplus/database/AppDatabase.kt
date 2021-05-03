@@ -9,7 +9,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [Assigment::class], version = 1, exportSchema = false)
+@Database(entities = [Assigment::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun assigmentDao(): AssigmentDao
@@ -28,7 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "db_assigment"
+                    "assigment_db2"
                 )
                     .fallbackToDestructiveMigration()
                     .addCallback(AppDatabaseCallback(scope))

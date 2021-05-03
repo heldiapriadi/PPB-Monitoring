@@ -16,7 +16,7 @@ import com.ppb.reminderplus.type.Assigment
 import java.util.*
 
 
-class HomeFragment : Fragment() {
+class   HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var rvAssigment: RecyclerView
