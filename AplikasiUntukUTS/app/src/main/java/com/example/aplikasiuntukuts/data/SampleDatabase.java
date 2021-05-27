@@ -61,9 +61,11 @@ public abstract class SampleDatabase extends RoomDatabase {
                 @Override
                 public void run() {
                     Cheese cheese = new Cheese();
-                    for (int i = 0; i < Cheese.CHEESES.length; i++) {
+                    int i = 0;
+                    while(i<Cheese.CHEESES.length){
                         cheese.name = Cheese.CHEESES[i];
                         cheese().insert(cheese);
+                        i++;
                     }
                 }
             });

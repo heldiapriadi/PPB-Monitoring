@@ -97,8 +97,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
             if (mCursor.moveToPosition(position)) {
-                holder.mText.setText(mCursor.getString(
-                        mCursor.getColumnIndexOrThrow(Cheese.COLUMN_NAME)));
+                holder.mText.setText(mCursor.getString(mCursor.getColumnIndexOrThrow(Cheese.COLUMN_NAME)));
             }
         }
 

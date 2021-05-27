@@ -47,7 +47,7 @@ import java.util.concurrent.Callable;
 public class SampleContentProvider extends ContentProvider {
 
     /** The authority of this content provider. */
-    public static final String AUTHORITY = "com.example.android.contentprovidersample.provider";
+    public static final String AUTHORITY = "com.example.aplikasiuntukuts.provider";
 
     /** The URI for the Cheese table. */
     public static final Uri URI_CHEESE = Uri.parse(
@@ -61,6 +61,11 @@ public class SampleContentProvider extends ContentProvider {
 
     /** The URI matcher. */
     private static final UriMatcher MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
+
+    public static final String CONTENT_TYPE =
+            "vnd.android.cursor.dir/" + AUTHORITY + "/" + Cheese.TABLE_NAME;
+    public static final String CONTENT_ITEM_TYPE =
+            "vnd.android.cursor.item/" + AUTHORITY + "/" + Cheese.TABLE_NAME;
 
     static {
         MATCHER.addURI(AUTHORITY, Cheese.TABLE_NAME, CODE_CHEESE_DIR);
@@ -101,11 +106,11 @@ public class SampleContentProvider extends ContentProvider {
     public String getType(@NonNull Uri uri) {
         switch (MATCHER.match(uri)) {
             case CODE_CHEESE_DIR:
-                return "vnd.android.cursor.dir/" + AUTHORITY + "." + Cheese.TABLE_NAME;
+                return CONTENT_TYPE;
             case CODE_CHEESE_ITEM:
-                return "vnd.android.cursor.item/" + AUTHORITY + "." + Cheese.TABLE_NAME;
+                return CONTENT_ITEM_TYPE;
             default:
-                throw new IllegalArgumentException("Unknown URI: " + uri);
+                throw new IllegalArgumentException("Tidak dikenali URI: " + uri);
         }
     }
 

@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".provider.SampleContentProvider"
+            android:authorities="com.example.aplikasiuntukuts.provider"
+            android:exported="true"
+            android:permission="com.example.aplikasiuntukuts.provider.READ_WRITE"/>
     </application>
 
 </manifest>
