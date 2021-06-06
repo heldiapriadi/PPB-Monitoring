@@ -56,7 +56,6 @@
         tools:text="@string/descriptionAssigment"/>
 
     <Button
-        android:id="@+id/buttonDone"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

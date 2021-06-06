@@ -4,12 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 
-@Database(entities = [Assigment::class], version = 2, exportSchema = false)
+@Database(entities = [Assigment::class, Course::class], version = 1)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun assigmentDao(): AssigmentDao
@@ -28,7 +31,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "assigment_db2"
+                    "db_Reminder_plus"
                 )
                     .fallbackToDestructiveMigration()
                     .addCallback(AppDatabaseCallback(scope))
@@ -65,9 +68,12 @@ abstract class AppDatabase : RoomDatabase() {
         suspend fun populateDatabase(assigmentDao: AssigmentDao) {
             // Start the app with a clean database every time.
             // Not needed if you only populate on creation.
-            assigmentDao.deleteAll()
-            var assigment = Assigment(0,"TEST","test2","LOW","DDD","sda","dsds")
-            assigmentDao.insert(assigment)
+            assigmentDao.deleteAllAssigment()
+            assigmentDao.deleteAllCourses()
+//            var course = Course(1, "PPB", null)
+//            var assigment = Assigment(0, "TEST555", "test2", "LOW", Calendar.getInstance(), "sda", "dsds",1)
+//            assigmentDao.insertCourse(course)
+//            assigmentDao.insertAssigment(assigment)
 
         }
     }

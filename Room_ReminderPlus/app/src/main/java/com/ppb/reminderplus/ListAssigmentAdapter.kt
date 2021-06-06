@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ppb.reminderplus.database.Assigment
 import com.ppb.reminderplus.ListAssigmentAdapter.AssigmentViewHolder
+import  com.ppb.reminderplus.database.AssigmentDao
 import com.ppb.reminderplus.type.Priority
 
 class ListAssigmentAdapter : ListAdapter<Assigment, AssigmentViewHolder>(AssigmentsComparator()) {

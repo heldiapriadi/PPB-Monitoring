@@ -43,18 +43,19 @@
         tools:text="10:00 AM" />
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dateAssigment">
+
         <TableRow
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp">
+
             <TextView
                 style="@style/TextSpec.Field"
                 android:text="Course" />
@@ -65,10 +66,12 @@
                 tools:text="Pemograman Perangkat Bergerak (Mobile)" />
 
         </TableRow>
+
         <TableRow
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp">
+
             <TextView
                 style="@style/TextSpec.Field"
                 android:text="Description" />
@@ -80,9 +83,10 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp">
+
             <TextView
                 style="@style/TextSpec.Field"
                 android:text="Time Remaining" />
@@ -95,9 +99,10 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp">
+
             <TextView
                 style="@style/TextSpec.Field"
                 android:text="Status" />
@@ -108,5 +113,16 @@
                 tools:text="Selesai" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        android:backgroundTint="@color/colorPrimary"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

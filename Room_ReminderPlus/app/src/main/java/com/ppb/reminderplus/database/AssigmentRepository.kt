@@ -11,12 +11,28 @@ class AssigmentRepository(private val assigmentDao: AssigmentDao) {
     // Observed Flow will notify the observer when the data has changed.
     val allAssigments: Flow<List<Assigment>> = assigmentDao.getAssigments()
 
+    val assigmentsAndCourse: Flow<List<AssigmentWithCourse>> = assigmentDao.getAssigmentWithCourse()
+
+    val findAllAssigmentCourse: Flow<List<AssigmentAndCourse>> = assigmentDao.findAllssigmentCourse()
+
+
     // By default Room runs suspend queries off the main thread, therefore, we don't need to
     // implement anything else to ensure we're not doing long running database work
     // off the main thread.
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun insert(assigment: Assigment) {
-        assigmentDao.insert(assigment)
+    suspend fun insertAssigment(assigment: Assigment) {
+        assigmentDao.insertAssigment(assigment)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insertCourse(course: Course) {
+        assigmentDao.insertCourse((course))
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun deleteAssigment(assigmentId: Int) {
+        assigmentDao.deleteAssigment(assigmentId)
     }
 }

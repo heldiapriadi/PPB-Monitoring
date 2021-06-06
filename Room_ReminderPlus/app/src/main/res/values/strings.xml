@@ -16,5 +16,10 @@
     <string name="titleAssigment">Nama Tugas</string>
     <string name="tanggalAssigment">18/07/2019 16:20</string>
     <string name="descriptionAssigment">Deskripsi tentang tugas</string>
+    <string name="action_new_assigment">New Assigment</string>
+    <string name="action_new_course">New Course</string>
+    <string name="action_new_class">New Class</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

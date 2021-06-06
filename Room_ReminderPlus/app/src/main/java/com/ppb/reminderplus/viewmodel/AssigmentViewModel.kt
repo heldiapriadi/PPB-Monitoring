@@ -1,8 +1,7 @@
 package com.ppb.reminderplus
 
 import androidx.lifecycle.*
-import com.ppb.reminderplus.database.Assigment
-import com.ppb.reminderplus.database.AssigmentRepository
+import com.ppb.reminderplus.database.*
 import kotlinx.coroutines.launch
 
 class AssigmentViewModel(private val repository: AssigmentRepository) : ViewModel() {
@@ -13,12 +12,25 @@ class AssigmentViewModel(private val repository: AssigmentRepository) : ViewMode
     // - Repository is completely separated from the UI through the ViewModel.
     val allAssigments: LiveData<List<Assigment>> = repository.allAssigments.asLiveData()
 
+    val assigmentsAndCourse: LiveData<List<AssigmentWithCourse>> =  repository.assigmentsAndCourse.asLiveData()
+
+    val findAssigmentCourse: LiveData<List<AssigmentAndCourse>> = repository.findAllAssigmentCourse.asLiveData()
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insert(assigment: Assigment) = viewModelScope.launch {
-        repository.insert(assigment)
+    fun insertAssigment(assigment: Assigment) = viewModelScope.launch {
+        repository.insertAssigment(assigment)
     }
+
+    fun insertCourse(course: Course) = viewModelScope.launch {
+        repository.insertCourse(course)
+    }
+
+    fun deleteAssigment(assigmentId: Int) = viewModelScope.launch {
+        repository.deleteAssigment(assigmentId)
+    }
+
+
 }
 
 class AssigmentViewModelFactory(private val repository: AssigmentRepository)    : ViewModelProvider.Factory {
